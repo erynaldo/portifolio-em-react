@@ -11,9 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-/src/assets/foto_perfil.png
-/src/assets/logo_e.png
-/public/favicon.svg
 
 # Editor directories and files
 .vscode/*
