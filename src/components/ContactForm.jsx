@@ -8,9 +8,9 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.nome || !formData.email || !formData.msg) {
-      alert("É necessário preencher todos os campos antes de enviar.");
+      alert("É necessário preencher todos os campos.");
     } else {
-      alert(`Obrigado, ${formData.nome}! Sua mensagem foi enviada com sucesso.`);
+      alert(`Parabéns ${formData.nome}! Você foi cadastrado com sucesso.`);
       setFormData({ nome: '', email: '', msg: '' });
     }
   };
@@ -36,14 +36,15 @@ const ContactForm = () => {
         />
       </div>
       <div class="campo">
-        <label for="msg">Mensagem:</label>
-        <textarea
+        <label for="msg">Telefone:</label>
+        <input
           id="msg"
+          type="text"
           value={formData.msg}
           onChange={(e) => setFormData({ ...formData, msg: e.target.value })}
         />
       </div>
-      <button type="submit">Enviar Mensagem</button>
+      <button type="submit">Enviar</button>
       {stateMessage && <p>{stateMessage}</p>}
     </form>
   );

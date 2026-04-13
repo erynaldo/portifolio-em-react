@@ -3,7 +3,9 @@ import ProjectCard from './components/ProjectCard';
 import './index.css';
 import fotoPerfil from './assets/foto_perfil.png';
 import fotoLogo from './assets/logo_e.png';
+import iconeClaroEscuro from './assets/icone-claro-escuro.png';
 import ContactForm from './components/ContactForm';
+import Rodape from './components/Rodape';
 
 
 const meusProjetos = [
@@ -54,34 +56,33 @@ function App() {
       <header>
         <div id="logo-nome">
           <img src={fotoLogo} alt="Logo de Erinaldo" id="logo" />
-          <h1>Erinaldo Cardoso</h1>
+          <h1>Erinaldo</h1>
         </div>
         <nav>
           <ul>
             <li><a href="#sobre">Sobre Mim</a></li>
-            <li><a href="#projetos">Meus Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Cadastre-se</a></li>
             <li>
-              <button id="btn-tema" onClick={alternarTema}>
-                {temaEscuro ? 'Claro' : 'Escuro'}
-              </button>
+              <div id="btn-tema" onClick={alternarTema}>
+                {/* {temaEscuro ? 'Claro' : 'Escuro'} */}
+                <img src={iconeClaroEscuro} alt="Icone Claro-Escuro" id="ico-claro-escuro" />
+              </div>
             </li>
           </ul>
         </nav>
       </header>
 
       <main>
+
         <section id="sobre">
-          <h2>Sobre Mim</h2>
+          {/* <h2>Sobre Mim</h2> */}
           <img src={fotoPerfil} alt="Foto de Erinaldo Cardoso" />
-          <p>Sou formado em Administração Pública pela UESPI, servidor público municipal, atualmente cursando
-            Tecnologia em Sistemas para Internet pela UAPI/UESPI no pólo de Brasileira. A paixão pela área de TI vem
-            desde cedo, mas precisamente desde os meus 14 anos, quando fiz o primeiro
-            curso de informática. Em 2016 fiz o curso Técnico de Informática, em 2019 iniciei Ciência da Computação
-            pelo IFCE, estava cursando o 3º período, mas devido a problema de saúde acabei desistindo. Em 2024
-            iniciei Tecnologia em Sistemas para Internet. De 2019 pra cá, me identifiquei muito com a área da
-            programação, especialmente desenvolvimento web. Enfim, procuro sempre aprender mais nessa área, sei um
-            pouco das linguagens Javascript e Python.</p>
+          <p><span id="sobre-mim">Olá, meu nome é Erinaldo Cardoso</span> <br /> Atualmente estou cursando Tecnologia em Sistemas para Internet pela UAPI/UESPI, modalidade semi-presencial e em breve se Deus quiser estarei formado. A paixão pela área de TI vem
+            desde cedo, desde os meus 14 anos. Antes de iniciar esse curso eu já me identificava muito com essa área da
+            programação, especialmente desenvolvimento web. Enfim, em 2024, surgiu a oportunidade de poder fazer esse curso e estou gostando muito, aproveitando ao máximo para aprender sobre esse mundo da programação.
+            <br /><br /><a href="https://github.com/erynaldo" target="_blank" className="meu-link">Meu Github</a><a href="https://www.linkedin.com/in/erinaldo-cardoso-709bb31a3/" target="_blank" className="meu-link">Meu Linkedin</a>
+          </p>
         </section>
 
         <section id="projetos">
@@ -99,9 +100,13 @@ function App() {
         </section>
 
         <section id="contato">
-          <h2>Entre em Contato</h2>
-           <ContactForm />
+          <h2>Cadastre-se para receber minha newsletter</h2>
+          <ContactForm />
         </section>
+
+        <footer>
+          <Rodape />
+        </footer>
 
       </main>
 

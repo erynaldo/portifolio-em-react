@@ -3,6 +3,8 @@
   --dark-color: #0f172a;
   --light-bg: #f1f5f9;
   --white: #ffffff;
+  --body-bg: #ebe8e8;
+  --bg-estiloso: linear-gradient(1deg, #8091ef 10%, #05256b 100%);
 }
 
 * {
@@ -13,17 +15,21 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   line-height: 1.6;
-  background-color: var(--light-bg);
+  background-color: var(--body-bg);
   color: var(--dark-color);
 }
 
 header {
   background-color: var(--white);
-  padding: 1rem 5%;
+  padding: 0.8rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 #logo-nome {
@@ -53,13 +59,8 @@ nav a:hover {
 }
 
 #btn-tema {
-  padding: 4px 8px;
-  cursor: pointer;
-  background-color: var(--primary-color);
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
 .dark-theme {
@@ -67,64 +68,109 @@ nav a:hover {
   --dark-color: #f1f5f9;
   --white: #1e293b;
   --primary-color: #3b82f6;
-  background-color: var(--light-bg);
-  color: var(--dark-color);
-  min-width: 100vw;
-}
-
-.dark-theme footer {
-  background-color: #2a375a;
+  background: #181818;
   color: #f1f5f9;
+  /* min-width: 100vw; */
+  --bg-estiloso: linear-gradient(1deg, #f4ebeb 10%, #f5a194 100%);
 }
 
 section {
-  padding: 60px 5%;
+  padding: 6px 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+#sobre-mim {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+}
+
+.meu-link {
+  margin-left: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 7px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  color: var(--white)
+}
+
+.meu-link:hover {
+  background-color: #0d48c7;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+#ico-claro-escuro {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
 #sobre {
   display: flex;
-  flex-direction: column;
+  width: 80%;
+  padding: 70px;
+  margin-top: 70px;
   align-items: center;
-  text-align: center;
+  text-align: justify;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: var(--white);
 }
 
 #sobre img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  margin-bottom: 20px;
-  border: 4px solid var(--white);
+  border: 2px solid #dfe3e6;
 }
 
-#sobre img:hover {
-  border: 4px solid #c3d5e6;
+#sobre p {
+  margin-left: 30px;
+  color: var(--dark-color);
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-top: 80px;
+  margin-bottom: 10px;
 }
 
 .projetos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
+  gap: 30px;
 }
 
 .card-projeto {
-  background: var(--white);
+  background: var(--bg-estiloso);
+  color: var(--white);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   flex: 1 1 300px;
   max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+
+.card-projeto:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.img-projeto {
+  width: 8rem;
+  display: flex;
+  margin: 20px auto;
 }
 
 .card-projeto h3 {
@@ -142,15 +188,17 @@ h2 {
 }
 
 form {
-  background-color: var(--white);
+  background: var(--white);
   padding: 40px;
+  margin-bottom: 30px;
   border-radius: 16px;
   max-width: 550px;
-  margin: 40px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
+  margin-bottom: 30px;
 }
 
 .contato h2 {
@@ -196,7 +244,7 @@ form textarea {
 form button {
   margin-top: 10px;
   padding: 16px;
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -206,15 +254,15 @@ form button {
 }
 
 form button:hover {
-  background-color: #1d4ed8;
+  background-color: #0d48c7;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 footer {
   text-align: center;
   padding: 30px;
-  background-color: #2d3a49;
-  color: var(--white);
+  background: var(--white);
+  color: var(--dark-color);
 }
 
 footer p {
@@ -223,11 +271,11 @@ footer p {
 
 span {
   font-size: 15px;
-  color: #939392;
+  color: var(--primary-color);
 }
 
 
-/* Responsividade para mobile */
+/* Para mobile */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -239,7 +287,18 @@ span {
     gap: 20px;
   }
 
+  #sobre {
+    width: 90%;
+    padding: 40px 20px;
+    flex-direction: column;
+  }
+
+  #sobre p {
+    margin-left: 0;
+  }
+
   .card-projeto {
     flex-basis: 100%;
+    min-height: 300px;
   }
 }
