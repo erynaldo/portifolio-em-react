@@ -80,6 +80,12 @@ section {
   margin: 0 auto;
 }
 
+#titulo-sobre-mim {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
 #sobre-mim {
   font-size: 2rem;
   font-weight: 600;
@@ -151,14 +157,14 @@ h2 {
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   flex: 1 1 300px;
-  max-width: 400px;
-  display: flex;
+  /* max-width: 400px; */
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 
@@ -185,6 +191,26 @@ h2 {
 
 .card-projeto a:visited {
   color: #0da9dd;
+}
+
+.status-projeto {
+  font-weight: 600;
+  color: #000000;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 1px 10px;
+  background-color: #34b56c;
+}
+
+.projeto-git {
+  color: #93095a;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.projeto-git:hover {
+  text-decoration: underline;
 }
 
 form {
